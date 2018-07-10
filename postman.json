@@ -1,0 +1,86 @@
+{
+	"info": {
+		"_postman_id": "31833925-f268-45f1-b498-ba6a551c5f57",
+		"name": "Photos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CreatePhoto",
+			"description": "Functional tests for the Photos API.",
+			"item": [
+				{
+					"name": "Create Photo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "648c5e6c-cd63-4024-9dec-36f8ac6177cb",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Returns 200 status code\", function() {",
+									"   pm.response.to.have.status(200); ",
+									"});",
+									"",
+									"pm.test(\"Returns correct text\", function() {",
+									"    pm.response.to.have.body(\"Hello, Test\")",
+									"})"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-functions-key",
+								"value": "{{code}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://{{rootUrl}}/api/CreatePhoto?name=Test",
+							"protocol": "https",
+							"host": [
+								"{{rootUrl}}"
+							],
+							"path": [
+								"api",
+								"CreatePhoto"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Test"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "e79a229d-16a0-4309-a75d-5ba8b5e29cda",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "93ad6c68-16f3-4a29-959e-fc7a37670a20",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
